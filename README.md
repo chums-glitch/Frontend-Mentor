@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/28700309/README.md)
 # Frontend Mentor - Newsletter sign-up form with success message solution
 
 This is a solution to the [Newsletter sign-up form with success message challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv).
