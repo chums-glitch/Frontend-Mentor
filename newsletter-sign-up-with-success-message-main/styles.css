@@ -1,0 +1,300 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --red: hsl(4, 100%, 67%);
+  --red-soft: hsl(4, 100%, 95%);
+  --blue-800: hsl(234, 29%, 20%);
+  --blue-700: hsl(235, 18%, 26%);
+  --grey: hsl(0, 0%, 58%);
+  --white: hsl(0, 0%, 100%);
+  --shadow: 0 24px 48px hsla(234, 29%, 20%, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--blue-800);
+  background: var(--blue-700);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  width: 100%;
+  min-height: 56px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--white);
+  background: var(--blue-800);
+  font-weight: 700;
+  cursor: pointer;
+  transition: box-shadow 180ms ease, transform 180ms ease, background 180ms ease;
+}
+
+button:hover,
+button:focus-visible {
+  background: linear-gradient(90deg, hsl(347, 100%, 66%), hsl(13, 100%, 64%));
+  box-shadow: 0 16px 32px hsla(4, 100%, 67%, 0.42);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.signup-card,
+.success-card {
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.signup-card {
+  width: min(100%, 928px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: 64px;
+  align-items: center;
+  padding: 24px 24px 24px 64px;
+  border-radius: 36px;
+}
+
+.signup-art {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.signup-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.signup-content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  margin-bottom: 24px;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.signup-content p {
+  margin-bottom: 24px;
+}
+
+.benefits-list {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.benefits-list li {
+  min-height: 21px;
+  padding-left: 37px;
+  background-image: url("./assets/images/icon-list.svg");
+  background-repeat: no-repeat;
+  background-position: 0 2px;
+}
+
+.signup-form {
+  display: grid;
+  gap: 16px;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: -8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.error-message {
+  display: none;
+  color: var(--red);
+}
+
+input {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 24px;
+  border: 1px solid hsl(0, 0%, 75%);
+  border-radius: 8px;
+  color: var(--blue-800);
+  background: var(--white);
+}
+
+input::placeholder {
+  color: var(--grey);
+}
+
+input:focus {
+  outline: 0;
+  border-color: var(--blue-800);
+}
+
+.signup-form.is-invalid .error-message {
+  display: inline;
+}
+
+.signup-form.is-invalid input {
+  border-color: var(--red);
+  color: var(--red);
+  background: var(--red-soft);
+}
+
+.success-card {
+  width: min(100%, 504px);
+  padding: 48px 64px 64px;
+  border-radius: 36px;
+}
+
+.success-card[hidden],
+.signup-card[hidden] {
+  display: none;
+}
+
+.success-icon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 40px;
+}
+
+.success-card h2 {
+  margin-bottom: 24px;
+}
+
+.success-card p {
+  margin-bottom: 40px;
+}
+
+.success-card strong {
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  body {
+    background: var(--white);
+  }
+
+  .page-shell {
+    display: block;
+    padding: 0;
+  }
+
+  .signup-card {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .signup-art {
+    width: 100%;
+  }
+
+  .signup-art img {
+    width: 100%;
+  }
+
+  .signup-content {
+    width: 100%;
+    padding: 32px 24px 40px;
+  }
+
+  h1,
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .benefits-list {
+    margin-bottom: 40px;
+  }
+
+  .benefits-list li {
+    padding-left: 36px;
+  }
+
+  .success-card {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 149px 24px 40px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .success-card[hidden] {
+    display: none;
+  }
+
+  .success-icon {
+    margin-bottom: 40px;
+  }
+
+  .success-card p {
+    margin-bottom: 32px;
+  }
+
+  .success-card button {
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .form-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}

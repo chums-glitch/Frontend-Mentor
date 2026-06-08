@@ -2,51 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <main class="page-shell">
+    <section class="signup-card" id="signup-card" aria-labelledby="signup-title">
+      <picture class="signup-art">
+        <source media="(max-width: 700px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
+        <img src="./assets/images/illustration-sign-up-desktop.svg" alt="" aria-hidden="true">
+      </picture>
 
-  <!-- Sign-up form start -->
+      <div class="signup-content">
+        <h1 id="signup-title">Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
 
-  Stay updated!
+        <ul class="benefits-list" aria-label="Newsletter benefits">
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
 
-  Join 60,000+ product managers receiving monthly updates on:
+        <form class="signup-form" id="signup-form" novalidate>
+          <div class="form-header">
+            <label for="email">Email address</label>
+            <span class="error-message" id="email-error">Valid email required</span>
+          </div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="email@company.com"
+            autocomplete="email"
+            aria-describedby="email-error"
+            required
+          >
+          <button type="submit">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
+    </section>
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
-
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <section class="success-card" id="success-card" aria-labelledby="success-title" hidden>
+      <img class="success-icon" src="./assets/images/icon-success.svg" alt="" aria-hidden="true">
+      <h2 id="success-title">Thanks for subscribing!</h2>
+      <p>
+        A confirmation email has been sent to
+        <strong id="confirmed-email">ash@loremcompany.com</strong>. Please open it and click
+        the button inside to confirm your subscription.
+      </p>
+      <button type="button" id="dismiss-button">Dismiss message</button>
+    </section>
+  </main>
 </body>
 </html>
