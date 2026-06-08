@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: Not submitted yet
+- Solution URL: https://github.com/chums-glitch/Frontend-Mentor.git
 - Live Site URL: https://chums-glitch.github.io/Frontend-Mentor/
 
 ## My process
